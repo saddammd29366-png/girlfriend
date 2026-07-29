@@ -1,58 +1,44 @@
 const music = document.getElementById("music");
 const startBtn = document.getElementById("startBtn");
 
-startBtn.onclick = () => {
+// Open next page
+startBtn.addEventListener("click", () => {
 
-music.play();
+    // Play music
+    music.play().catch(() => {});
 
-document.body.style.opacity="0";
+    // Fade effect
+    document.body.style.transition = "opacity 1s ease";
+    document.body.style.opacity = "0";
 
-setTimeout(()=>{
+    // Open next page
+    setTimeout(() => {
+        window.location.href = "letter.html";
+    }, 1000);
 
-window.location="letter.html";
+});
 
-},1200);
+// Floating Hearts
+setInterval(() => {
 
-};
+    const heart = document.createElement("div");
 
-setInterval(()=>{
+    heart.className = "heart";
 
-const heart=document.createElement("div");
+    const icons = ["❤️", "💕", "💖", "💗", "🌸"];
 
-heart.className="heart";
+    heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
 
-heart.innerHTML="❤";
+    heart.style.left = Math.random() * 100 + "vw";
 
-heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
-heart.style.animationDuration=4+Math.random()*5+"s";
+    heart.style.opacity = Math.random();
 
-heart.style.opacity=Math.random();
+    document.body.appendChild(heart);
 
-document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
 
-setTimeout(()=>{
-
-heart.remove();
-
-},9000);
-
-},300);
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
-
-btn.onclick=()=>{
-
-if(music.paused){
-
-music.play();
-btn.innerHTML="⏸️";
-
-}else{
-
-music.pause();
-btn.innerHTML="🎵";
-
-}
-
-};
+}, 350);
