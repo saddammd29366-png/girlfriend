@@ -1,20 +1,20 @@
-// =========================
-// Image Gallery Viewer
-// =========================
+// ==========================
+// IMAGE POPUP
+// ==========================
 
 const cards = document.querySelectorAll(".card img");
 const viewer = document.getElementById("viewer");
-const big = document.getElementById("bigImage");
+const bigImage = document.getElementById("bigImage");
 const close = document.getElementById("close");
 
-if (cards.length && viewer && big && close) {
+if (cards.length && viewer && bigImage && close) {
 
-    cards.forEach(img => {
+    cards.forEach((img) => {
 
         img.addEventListener("click", () => {
 
             viewer.style.display = "flex";
-            big.src = img.src;
+            bigImage.src = img.src;
 
         });
 
@@ -23,6 +23,7 @@ if (cards.length && viewer && big && close) {
     close.addEventListener("click", () => {
 
         viewer.style.display = "none";
+        bigImage.src = "";
 
     });
 
@@ -31,6 +32,7 @@ if (cards.length && viewer && big && close) {
         if (e.target === viewer) {
 
             viewer.style.display = "none";
+            bigImage.src = "";
 
         }
 
@@ -38,56 +40,38 @@ if (cards.length && viewer && big && close) {
 
 }
 
-// =========================
-// Next Page Button
-// =========================
+// ==========================
+// NEXT PAGE BUTTON
+// ==========================
 
 const timelineBtn = document.getElementById("timelineBtn");
 
 if (timelineBtn) {
 
-    timelineBtn.addEventListener("click", () => {
+    timelineBtn.onclick = function () {
 
         window.location.href = "timeline.html";
 
-    });
+    };
 
 }
 
-// =========================
-// Floating Petals
-// =========================
-
-setInterval(() => {
-
-    const petal = document.createElement("div");
-
-    petal.className = "petal";
-    petal.innerHTML = "🌸";
-
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (5 + Math.random() * 4) + "s";
-
-    document.body.appendChild(petal);
-
-    setTimeout(() => {
-
-        petal.remove();
-
-    }, 9000);
-
-}, 500);
-
-// =========================
-// Music Player
-// =========================
+// ==========================
+// MUSIC BUTTON
+// ==========================
 
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
 if (music && musicBtn) {
 
-    musicBtn.addEventListener("click", () => {
+    music.volume = 0.5;
+
+    music.play().catch(() => {});
+
+    musicBtn.innerHTML = "⏸️";
+
+    musicBtn.onclick = function () {
 
         if (music.paused) {
 
@@ -101,6 +85,35 @@ if (music && musicBtn) {
 
         }
 
-    });
+    };
 
 }
+
+// ==========================
+// FLOATING FLOWERS
+// ==========================
+
+function createFlower() {
+
+    const flower = document.createElement("div");
+
+    flower.className = "petal";
+    flower.innerHTML = "🌸";
+
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.top = "-30px";
+
+    flower.style.animationDuration =
+        (6 + Math.random() * 4) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+
+        flower.remove();
+
+    }, 10000);
+
+}
+
+setInterval(createFlower, 600);
