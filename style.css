@@ -1,0 +1,725 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+#loader{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    background:#ff6b9d;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-content h1{
+
+    font-size:70px;
+
+    animation:beat 1s infinite;
+
+}
+
+.loader-content h2{
+
+    margin-top:20px;
+
+    font-size:25px;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+#hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.glass{
+
+    width:90%;
+
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    text-align:center;
+
+}
+
+.title{
+
+    font-size:60px;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.name{
+
+    margin-top:10px;
+
+    color:#fff5f8;
+
+    font-size:35px;
+
+}
+
+.subtitle{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+#startBtn{
+
+    margin-top:35px;
+
+    border:none;
+
+    background:white;
+
+    color:#ff4f81;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+#startBtn:hover{
+
+    transform:scale(1.08);
+
+    background:#ff4f81;
+
+    color:white;
+
+}
+
+/* =========================
+   LETTER
+========================= */
+
+#letter{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+#typingText{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    line-height:2;
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes beat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+
+}
+
+@media(max-width:768px){
+
+.title{
+
+font-size:42px;
+
+}
+
+.name{
+
+font-size:28px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.glass{
+
+padding:25px;
+
+}
+
+}
+/* ===========================
+   GALLERY
+=========================== */
+
+#gallery{
+
+padding:100px 20px;
+
+text-align:center;
+
+}
+
+.section-title{
+
+font-size:50px;
+
+font-family:'Great Vibes',cursive;
+
+margin-bottom:50px;
+
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.photo{
+
+overflow:hidden;
+
+border-radius:20px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+transition:.4s;
+
+}
+
+.photo:hover{
+
+transform:translateY(-10px);
+
+}
+
+.photo img{
+
+width:100%;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.photo img:hover{
+
+transform:scale(1.1);
+
+}
+
+/* Popup */
+
+#popup{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.9);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+}
+
+#popup img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:15px;
+
+}
+
+#closePopup{
+
+position:absolute;
+
+top:25px;
+
+right:40px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+}
+/* ===========================
+   REASONS
+=========================== */
+
+#reasons{
+
+padding:120px 20px;
+
+text-align:center;
+
+}
+
+.reason-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.reason-card{
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:20px;
+
+font-size:20px;
+
+font-weight:600;
+
+transition:.4s;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.reason-card:hover{
+
+transform:translateY(-12px) scale(1.05);
+
+background:rgba(255,255,255,.28);
+
+box-shadow:0 20px 35px rgba(0,0,0,.25);
+
+}
+/* ===========================
+   TIMELINE
+=========================== */
+
+#timeline{
+
+padding:120px 20px;
+
+position:relative;
+
+}
+
+.timeline{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:white;
+
+transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+width:50%;
+
+padding:20px 40px;
+
+margin:40px 0;
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+.timeline-item.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.timeline-item.left{
+
+left:0;
+
+text-align:right;
+
+}
+
+.timeline-item.right{
+
+left:50%;
+
+}
+
+.timeline-content{
+
+background:rgba(255,255,255,.18);
+
+padding:25px;
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.timeline-content h3{
+
+margin-bottom:10px;
+
+}
+
+.timeline-item::after{
+
+content:"❤️";
+
+position:absolute;
+
+top:30px;
+
+font-size:24px;
+
+}
+
+.timeline-item.left::after{
+
+right:-14px;
+
+}
+
+.timeline-item.right::after{
+
+left:-14px;
+
+}
+
+@media(max-width:768px){
+
+.timeline::before{
+
+left:25px;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+padding-left:70px;
+
+padding-right:20px;
+
+left:0!important;
+
+text-align:left;
+
+}
+
+.timeline-item::after{
+
+left:10px!important;
+
+right:auto;
+
+}
+
+}
+/* ===========================
+   FOREVER
+=========================== */
+
+#forever{
+
+padding:140px 20px;
+
+text-align:center;
+
+}
+
+.forever-box{
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+.forever-box p{
+
+margin:25px 0;
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+#loveBtn{
+
+margin-top:35px;
+
+padding:18px 50px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff3d6e;
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(255,0,80,.4);
+
+}
+
+#loveBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* ===========================
+   ENDING
+=========================== */
+
+#ending{
+
+padding:160px 20px;
+
+text-align:center;
+
+}
+
+#ending h1{
+
+font-size:70px;
+
+font-family:'Great Vibes',cursive;
+
+margin-bottom:20px;
+
+}
+
+#ending h2{
+
+font-size:35px;
+
+}
+
+/* ===========================
+   CONFETTI
+=========================== */
+
+.confetti{
+
+position:fixed;
+
+width:10px;
+
+height:10px;
+
+top:-10px;
+
+animation:confettiFall 5s linear forwards;
+
+pointer-events:none;
+
+z-index:999;
+
+}
+
+@keyframes confettiFall{
+
+to{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
