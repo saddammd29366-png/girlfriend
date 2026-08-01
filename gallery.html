@@ -2,25 +2,17 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Memories ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body class="gallery-page">
@@ -31,45 +23,32 @@ Our Beautiful Memories ❤️
 
 <div class="gallery">
 
-<div class="card">
+    <div class="card">
+        <img src="photo1.jpg" alt="Photo 1">
+        <p>Our Favorite Smile ❤️</p>
+    </div>
 
-<img src="images/photo1.jpg">
+    <div class="card">
+        <img src="photo2.jpg" alt="Photo 2">
+        <p>The Day I'll Never Forget ✨</p>
+    </div>
 
-<p>Our Favorite Smile ❤️</p>
-
-</div>
-
-<div class="card">
-
-<img src="images/photo2.jpg">
-
-<p>The Day I'll Never Forget ✨</p>
-
-</div>
-
-<div class="card">
-
-<img src="images/photo3.jpg">
-
-<p>Every Moment With You 💖</p>
-
-</div>
+    <div class="card">
+        <img src="photo3.jpg" alt="Photo 3">
+        <p>Every Moment With You 💖</p>
+    </div>
 
 </div>
 
 <div id="viewer">
-
-<span id="close">&times;</span>
-
-<img id="bigImage">
-
+    <span id="close">&times;</span>
+    <img id="bigImage" alt="Large View">
 </div>
 
 <button id="timelineBtn">
-Our Story 📖
+    Our Story 📖
 </button>
 
-<script src="gallery.js"></script>
 <div class="music-player">
     <button id="musicBtn">🎵</button>
     <span id="musicText">Music</span>
@@ -79,6 +58,7 @@ Our Story 📖
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-</body>
+<script src="gallery.js"></script>
 
+</body>
 </html>
