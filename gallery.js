@@ -1,79 +1,106 @@
+// =========================
+// Image Gallery Viewer
+// =========================
+
 const cards = document.querySelectorAll(".card img");
-
 const viewer = document.getElementById("viewer");
-
 const big = document.getElementById("bigImage");
-
 const close = document.getElementById("close");
 
-cards.forEach(img=>{
+if (cards.length && viewer && big && close) {
 
-img.onclick=()=>{
+    cards.forEach(img => {
 
-viewer.style.display="flex";
+        img.addEventListener("click", () => {
 
-big.src=img.src;
+            viewer.style.display = "flex";
+            big.src = img.src;
 
-}
+        });
 
-});
+    });
 
-close.onclick=()=>{
+    close.addEventListener("click", () => {
 
-viewer.style.display="none";
+        viewer.style.display = "none";
 
-};
+    });
 
-viewer.onclick=(e)=>{
+    viewer.addEventListener("click", (e) => {
 
-if(e.target===viewer)
+        if (e.target === viewer) {
 
-viewer.style.display="none";
+            viewer.style.display = "none";
 
-};
+        }
 
-document.getElementById("timelineBtn").onclick=()=>{
-
-location.href="timeline.html";
-
-};
-
-setInterval(()=>{
-
-const petal=document.createElement("div");
-
-petal.className="petal";
-
-petal.innerHTML="🌸";
-
-petal.style.left=Math.random()*100+"vw";
-
-petal.style.animationDuration=(5+Math.random()*4)+"s";
-
-document.body.appendChild(petal);
-
-setTimeout(()=>{
-
-petal.remove();
-
-},9000);
-
-},500);
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
-
-btn.onclick=()=>{
-
-if(music.paused){
-
-music.play();
-btn.innerHTML="⏸️";
-
-}else{
-
-music.pause();
-btn.innerHTML="🎵";
+    });
 
 }
 
-};
+// =========================
+// Next Page Button
+// =========================
+
+const timelineBtn = document.getElementById("timelineBtn");
+
+if (timelineBtn) {
+
+    timelineBtn.addEventListener("click", () => {
+
+        window.location.href = "timeline.html";
+
+    });
+
+}
+
+// =========================
+// Floating Petals
+// =========================
+
+setInterval(() => {
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+    petal.innerHTML = "🌸";
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+
+        petal.remove();
+
+    }, 9000);
+
+}, 500);
+
+// =========================
+// Music Player
+// =========================
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+if (music && musicBtn) {
+
+    musicBtn.addEventListener("click", () => {
+
+        if (music.paused) {
+
+            music.play();
+            musicBtn.innerHTML = "⏸️";
+
+        } else {
+
+            music.pause();
+            musicBtn.innerHTML = "🎵";
+
+        }
+
+    });
+
+}
